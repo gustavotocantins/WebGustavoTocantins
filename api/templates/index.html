@@ -1,0 +1,226 @@
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            width: 270px;
+            height:65px;
+            padding: 10px 20px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive Menu */
+        .menu-button {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .menu-responsive {
+            display: none;
+            flex-direction: column;
+            background-color: #333;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            width: 200px;
+            border-radius: 5px;
+            overflow: hidden;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .menu-responsive a {
+            color: white;
+            padding: 10px;
+            border-bottom: 1px solid #555;
+            text-align: center;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            .menu-button {
+                display: block;
+            }
+
+            .post-container {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+
+        /* Post Styles */
+        .post-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .post-title {
+            font-size: 2.7em;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #ff5400;
+        }
+
+        .post-subtitle {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .post-content {
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 1.2em;
+        }
+
+        .code-container {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+        }
+
+        .post-image {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    /* Estilização dos posts */
+#posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.post {
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+/* Estilização do rodapé */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <img alt="Logo" class="logo" src="../static/logo.png">
+        <div class="menu-button" onclick="toggleMenu()">☰</div>
+        <div class="menu">
+            <a href="#">Inicio</a>
+            <a href="#">Blog</a>
+            <a href="#">Portfólio</a>
+<a href="#">Contato</a>
+        </div>
+        <div class="menu-responsive" id="menu-responsive" style="display: none;">
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </div>
+    </div>
+
+    <div class="post-container">
+  <center>
+        <h1 class="post-title">Os Melhores <span class="highlight"> Artigos do Blog </span>para você ler agora</h1>
+        </center>
+        
+
+        
+   <main>
+    <section id="posts">
+      <article class="post">
+  <img alt="Imagem do post" class="post-image" src="../static/imagem2.jpeg">
+        <h2>Como Criar Aplicativos Android com Python: Um Guia Completo</h2>
+        <p>Resumo:
+
+Este guia completo desmistifica o desenvolvimento de aplicativos Android com Python, revelando as ferramentas, frameworks e técnicas essenciais para criar apps incríveis...</p>
+        <a href="#">Leia mais</a>
+      </article>
+
+      <article class="post">
+  <img alt="Imagem do post" class="post-image" src="../static/imagem1.jpeg">
+        <h2>Guia Completo: Como Criar Sua Primeira Rede Neural do Zero</h2>
+        <p>Este guia abrangente te conduzirá passo a passo na criação da sua primeira rede neural, mesmo que você não tenha experiência prévia...</p>
+        <a href="#">Leia mais</a>
+      </article>
+
+      </section>
+  </main>     
+        
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu-responsive");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+</body></html>

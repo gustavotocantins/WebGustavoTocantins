@@ -1,0 +1,203 @@
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            width: 270px;
+            height:65px;
+            padding: 10px 20px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive Menu */
+        .menu-button {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .menu-responsive {
+            display: none;
+            flex-direction: column;
+            background-color: #333;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            width: 200px;
+            border-radius: 5px;
+            overflow: hidden;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .menu-responsive a {
+            color: white;
+            padding: 10px;
+            border-bottom: 1px solid #555;
+            text-align: center;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            .menu-button {
+                display: block;
+            }
+
+            .post-container {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+
+        /* Post Styles */
+        .post-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .post-title {
+            font-size: 2.7em;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #ff5400;
+        }
+
+        .post-subtitle {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .post-content {
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 1.2em;
+        }
+
+        .code-container {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+        }
+
+        .post-image {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <img alt="Logo" class="logo" src="../static/logo.png">
+        <div class="menu-button" onclick="toggleMenu()">☰</div>
+        <div class="menu">
+            <a href="#">Inicio</a>
+            <a href="#">Blog</a>
+            <a href="#">Portfólio</a>
+<a href="#">Contato</a>
+        </div>
+        <div class="menu-responsive" id="menu-responsive" style="display: none;">
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </div>
+    </div>
+
+    <div class="post-container">
+        <h1 class="post-title">Newsletter: o que é e como <span class="highlight">criar emails de alta </span>performance em 11 passos</h1>
+        <h2 class="post-subtitle">Subtítulo do Post</h2>
+        <div class="post-content">
+            <p>
+                Este é o texto do post. Ele deve ser exibido com alinhamento justificado para proporcionar
+                uma leitura mais agradável e organizada. A configuração do layout deve permitir que o texto
+                ocupe 70% da largura da tela em dispositivos de desktop, para evitar que as linhas fiquem
+                excessivamente longas.
+            </p>
+            <p>
+                Mais conteúdo do post pode ser adicionado aqui. O layout responsivo garante que a experiência
+                de leitura seja boa tanto em dispositivos móveis quanto em computadores.
+            </p>
+        </div>
+
+        <div class="code-container">
+            <pre><code>
+# Este é um exemplo de código Python
+def saudacao(nome):
+    return f"Olá, {nome}!"
+
+print(saudacao("Mundo"))
+            </code></pre>
+        </div>
+        
+        <img alt="Imagem do post" class="post-image" src="../static/imagem1.jpeg">
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu-responsive");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+</body></html>

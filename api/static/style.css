@@ -1,0 +1,70 @@
+/* Estilos gerais */
+body {
+    font-family: sans-serif;
+}
+
+header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo img {
+    height: 40px; /* Ajuste conforme necessário */
+}
+
+main {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+article {
+    text-align: justify;
+}
+
+/* Estilos do menu */
+.menu {
+    display: flex; /* Exibe o menu em linha no desktop */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+/* Estilos para mobile */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Esconde o menu em mobile */
+        flex-direction: column; /* Exibe o menu em coluna */
+        position: absolute;
+        top: 100%; /* Posiciona abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: #333; /* Cinza escuro */
+    }
+
+    .menu.active {
+        display: flex; /* Exibe o menu quando ativo */
+    }
+}
+
+/* Estilos para o bloco de código */
+.code-block {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Adiciona barra de rolagem horizontal se necessário */
+}
+
+code {
+    font-family: monospace;
+}
+
